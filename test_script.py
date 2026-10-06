@@ -3,9 +3,8 @@ import hmac
 import json
 import os
 
-import requests
-
 import pytest
+import requests
 import responses
 from dotenv import load_dotenv
 

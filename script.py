@@ -7,7 +7,7 @@ import requests
 from dotenv import load_dotenv
 
 
-def send_resume(endpoint: str, resume_url: str, secret: str) -> tuple[int, str]:
+def send_resume(endpoint, resume_url, secret):
     """
     POST to HowGood's job application endpoint.
 
