@@ -8,7 +8,7 @@ import requests
 import responses
 from dotenv import load_dotenv
 
-from script import main, send_resume
+from send_resume import main, send_resume
 
 # override=True so the .env.tests values win even if the developer's
 # shell already exports SECRET/ENDPOINT/RESUME_URL with active values
@@ -92,7 +92,7 @@ def test_env(monkeypatch):
     and the three variables are set explicitly so main() cannot pick up
     any active values. monkeypatch undoes all of this after the test.
     """
-    monkeypatch.setattr("script.load_dotenv", lambda *args, **kwargs: None)
+    monkeypatch.setattr("send_resume.load_dotenv", lambda *args, **kwargs: None)
     monkeypatch.setenv("SECRET", secret)
     monkeypatch.setenv("ENDPOINT", endpoint)
     monkeypatch.setenv("RESUME_URL", resume_url)

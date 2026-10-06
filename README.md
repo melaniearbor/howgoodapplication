@@ -3,8 +3,8 @@
 `POST`ing to an endpoint is just about the most fun way to apply to a job ever. I'm just so tickled 🤭✨
 
 There are several files in this repo:
-- `script.py` which is the code I ran to submit my resume to the aforementioned endpoint
-- `test_script.py` running against the dummy values in `.env.tests`, so the suite passes for any cloner
+- `send_resume.py` which is the code I ran to submit my resume to the aforementioned endpoint
+- `test_send_resume.py` running against the dummy values in `.env.tests`, so the suite passes for any cloner
 - `.gitignore` to enable the use of an `.env` file for secrets, and ignore additional other bits
 - `requirements.txt` to install the needful
 - `.claude/skills/review-me/SKILL.md` so cloners running Claude Code get `/review-me` skill I created too

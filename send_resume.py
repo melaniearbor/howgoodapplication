@@ -48,10 +48,7 @@ def main():
     endpoint = os.getenv("ENDPOINT")
     resume_url = os.getenv("RESUME_URL")
     if not all([secret, endpoint, resume_url]):
-        print(
-            """One of secret, endpoint, or resume_url missing from 
-        environment. Update .env accordingly."""
-        )
+        print("SECRET, ENDPOINT, or RESUME_URL missing from .env / environment")
         return
     status, response = send_resume(
         endpoint=endpoint, resume_url=resume_url, secret=secret
