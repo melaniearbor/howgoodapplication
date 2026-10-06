@@ -7,7 +7,7 @@ import requests
 from dotenv import load_dotenv
 
 
-def send_resume(endpoint, resume_url, secret):
+def send_resume(endpoint, resume_url, secret, notes):
     """
     POST to HowGood's job application endpoint.
 
@@ -23,6 +23,7 @@ def send_resume(endpoint, resume_url, secret):
         "codeLink": "https://github.com/melaniearbor/howgoodapplication",
         "yearsPython": 11,
         "yearsDjango": 10,
+        "notes": notes,
     }
 
     body = json.dumps(payload)
@@ -47,11 +48,12 @@ def main():
     secret = os.getenv("SECRET")
     endpoint = os.getenv("ENDPOINT")
     resume_url = os.getenv("RESUME_URL")
+    notes = os.getenv("NOTES")
     if not all([secret, endpoint, resume_url]):
         print("SECRET, ENDPOINT, or RESUME_URL missing from .env / environment")
         return
     status, response = send_resume(
-        endpoint=endpoint, resume_url=resume_url, secret=secret
+        endpoint=endpoint, resume_url=resume_url, secret=secret, notes=notes
     )
     print(status)
     print(response)
